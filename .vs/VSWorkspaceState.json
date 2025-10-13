@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\firstClass",
+    "\\week_2",
+    "\\week_2-activity"
   ],
-  "SelectedNode": "\\week_2",
+  "SelectedNode": "\\week_2-activity\\week_2-activity.cpp",
   "PreviewInSolutionExplorer": false
 }

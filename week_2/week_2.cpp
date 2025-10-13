@@ -16,5 +16,5 @@ int main()
     int b = ++a;
     cout << "b:" << b << "\n";
     cout << "a:" << a << "\n";
-
+    return 0;
 }
