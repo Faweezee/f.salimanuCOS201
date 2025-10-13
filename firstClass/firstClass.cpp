@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+const float PI = 3.142;
 
 int main()
 {
@@ -14,7 +15,6 @@ int main()
     cout << "ENTER RADIUS: ";
     double r;
     cin >> r;
-    double PI = 3.142;
     double area = r * r * PI;
     cout << "AREA: ";
     cout<<area << endl;
