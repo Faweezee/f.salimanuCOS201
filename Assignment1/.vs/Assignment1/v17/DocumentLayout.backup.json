@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USER\\Desktop\\SCHOOL\\200lvl - 1\\COS 201 - Computer Programming 1\\Assignment1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{213CC410-C8BE-4AF9-9F9E-08D3F99C3997}|Assignment1.vcxproj|C:\\Users\\USER\\Desktop\\SCHOOL\\200lvl - 1\\COS 201 - Computer Programming 1\\Assignment1\\Assignment1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{213CC410-C8BE-4AF9-9F9E-08D3F99C3997}|Assignment1.vcxproj|solutionrelative:Assignment1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Assignment1.cpp",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\SCHOOL\\200lvl - 1\\COS 201 - Computer Programming 1\\Assignment1\\Assignment1.cpp",
+              "RelativeDocumentMoniker": "Assignment1.cpp",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\SCHOOL\\200lvl - 1\\COS 201 - Computer Programming 1\\Assignment1\\Assignment1.cpp",
+              "RelativeToolTip": "Assignment1.cpp",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-06T16:15:24.353Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
