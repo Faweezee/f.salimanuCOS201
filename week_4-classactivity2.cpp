@@ -30,55 +30,64 @@ int main()
 	cout<<"Enter full name: ";
 	string name;
 	getline(cin, name);
-	cout<<"Are you a PAU student? (Enter \"1\" for \"YES\" and \"0\" for \"NO\")";
+	cout<<"Are you a PAU student? (Enter \"1\" for \"YES\" and \"0\" for \"NO\")   ";
 	int stud;
 	cin >> stud;
 	bool isPau;
+	string PAU;
 	
 	if(stud ==1)
 	{
 		isPau = true;
+		PAU = "Yes";
 	}
 	else 
 	{
 		isPau = false;
+		PAU = "No";
 	}
 	
-	cout<<"What course do you want to enroll for? (Enter a number from \"1\" to \"5\")";
+	cout<<"What course do you want to enroll for? (Enter a number from \"1\" to \"5\")   ";
 	int course;
 	cin >> course;
-	cout<<"Which location will you be lodging? (Enter a number from \"1\" to \"5\")";
+	cout<<"Which location will you be lodging? (Enter a number from \"1\" to \"5\")   ";
 	int dorm;
 	cin >> dorm;
 	
 	double courseFee;
 	double courseDays;
 	double lodgeFee;
+	string courseName;
 	
 	if (course == 1)
 	{
 		courseFee = 10000;
 		courseDays = 3;
+		courseName = "Photography";
 	}
 	else if (course == 2)
 	{
 		courseFee = 8000;
 		courseDays = 5;
+		courseName = "Painting";
 	}
 	else if (course == 3)
 	{
 		courseFee = 15000;
 		courseDays = 7;
+		courseName = "Fish Farming";
 	}
 	else if (course == 4)
 	{
 		courseFee = 13000;
 		courseDays = 5;
+		courseName = "Baking";
 	}
 	else if (course == 5)
 	{
 		courseFee = 5000;
 		courseDays = 2;
+		courseName = "Public Speaking";
 	}
 	else
 	{
@@ -88,42 +97,80 @@ int main()
 	
 	if (dorm == 1)
 	{
-		lodgeFee = 10000;
+		lodgeFee = 10000 * courseDays;
 	}
 	else if (dorm == 2)
 	{
-		lodgeFee = 2500;
+		lodgeFee = 2500 * courseDays;
 	}
 	else if (dorm == 3)
 	{
-		lodgeFee = 5000;
+		lodgeFee = 5000 * courseDays;
 	}
 	else if (dorm ==4)
 	{
-		lodgeFee = 13000;
+		lodgeFee = 13000 * courseDays;
 	}
 	else if (dorm == 5)
 	{
-		lodgeFee = 5000;
+		lodgeFee = 5000 * courseDays;
 	}
 	else
 	{
 		cout<<"WRONG INPUT!\n";
 	}
-	
-	double total;
-	
+		
+	bool discountApp = false;
+	double lodgeDiscount;
 	if (isPau && (dorm == 1 || dorm == 2))
 	{
-		lodgeFee = lodgeFee * 0.95;
+		lodgeDiscount = lodgeFee * 0.05;
+		discountApp = true;
+		lodgeFee = lodgeFee * 0.95;		
 	}
 	
+	bool CDiscountApp = false;
+	double courseDiscount;
+	
+	srand(time(0));
+    int randNum = rand() %100;
+    
 	if (courseDays > 5 || courseFee > 12000)
 	{
+		courseDiscount = courseFee * 0.3;
+		CDiscountApp = true;
 		courseFee = courseFee * 0.97;
 	}
 	
+	double total = courseFee + lodgeFee;
+	int promo = 0;
 	
+	if (randNum == 7 || randNum == 77)
+	{
+		total = total - 500;
+		promo = 500;
+	}
+	
+	cout << "Name: " << name<<"   (PAU student: "<< PAU<<")\n" ;
+	cout<< "Course: "<< courseName<< "    Days: "<< courseDays<<"\n";
+	cout<< "Registration: =N="<<courseFee;
+	if(CDiscountApp)
+	{
+		cout<<"    (Discount Applied: =N="<<courseDiscount<<")\n";
+	}
+	else{
+		cout<<"\n";
+	}
+	cout<< "Lodging: =N="<<lodgeFee;
+	if(discountApp)
+	{
+		cout<<"    (Discount applied: =N="<<lodgeDiscount<<")\n";
+	}
+	else{
+		cout<<"\n";
+	}
+	cout<<"Random draw: "<<randNum<<"   Promo applied: "<<promo<<"\n" ;
+	cout<<"Total: =N="<<total;
 	
 	return 0;
 }	
