@@ -33,144 +33,120 @@ int main()
 	cout<<"Are you a PAU student? (Enter \"1\" for \"YES\" and \"0\" for \"NO\")   ";
 	int stud;
 	cin >> stud;
-	bool isPau;
-	string PAU;
+	bool isPau = (stud==1);
 	
-	if(stud ==1)
-	{
-		isPau = true;
-		PAU = "Yes";
-	}
-	else 
-	{
-		isPau = false;
-		PAU = "No";
-	}
+	double courseFee = 0;
+	double courseDays = 0;
+	double lodgePerDay = 0;
+	double lodgeFee = 0;
+	string courseName = "";
 	
 	cout<<"What course do you want to enroll for? (Enter a number from \"1\" to \"5\")   ";
 	int course;
 	cin >> course;
-	cout<<"Which location will you be lodging? (Enter a number from \"1\" to \"5\")   ";
-	int dorm;
-	cin >> dorm;
-	
-	double courseFee;
-	double courseDays;
-	double lodgeFee;
-	string courseName;
-	
 	if (course == 1)
 	{
-		courseFee = 10000;
+		courseFee = 10000.0;
 		courseDays = 3;
 		courseName = "Photography";
 	}
 	else if (course == 2)
 	{
-		courseFee = 8000;
+		courseFee = 8000.0;
 		courseDays = 5;
 		courseName = "Painting";
 	}
 	else if (course == 3)
 	{
-		courseFee = 15000;
+		courseFee = 15000.0;
 		courseDays = 7;
 		courseName = "Fish Farming";
 	}
 	else if (course == 4)
 	{
-		courseFee = 13000;
+		courseFee = 13000.0;
 		courseDays = 5;
 		courseName = "Baking";
 	}
 	else if (course == 5)
 	{
-		courseFee = 5000;
+		courseFee = 5000.0;
 		courseDays = 2;
 		courseName = "Public Speaking";
 	}
 	else
 	{
-		cout<<"WRONG INPUT!\n";
+		cout<<"INVALID COURSE SELECTION!\n";
+		return 1;
 	}
 	
+	
+	cout<<"Which location will you be lodging? (Enter a number from \"1\" to \"5\")   ";
+	int dorm;
+	cin >> dorm;
 	
 	if (dorm == 1)
 	{
-		lodgeFee = 10000 * courseDays;
+		lodgePerDay = 10000.0;
+		lodgeFee = lodgePerDay * courseDays;
 	}
 	else if (dorm == 2)
 	{
-		lodgeFee = 2500 * courseDays;
+		lodgePerDay = 2500.0;
+		lodgeFee = lodgePerDay * courseDays;
 	}
 	else if (dorm == 3)
 	{
-		lodgeFee = 5000 * courseDays;
+		lodgePerDay = 5000.0;
+		lodgeFee = lodgePerDay * courseDays;
 	}
 	else if (dorm ==4)
 	{
-		lodgeFee = 13000 * courseDays;
+		lodgePerDay = 13000.0;
+		lodgeFee = lodgePerDay * courseDays;
 	}
 	else if (dorm == 5)
 	{
-		lodgeFee = 5000 * courseDays;
+		lodgePerDay = 5000.0;
+		lodgeFee = lodgePerDay * courseDays;
 	}
 	else
 	{
-		cout<<"WRONG INPUT!\n";
+		cout<<"INVALID LODGING SELECTION!\n";
+		return 1;
 	}
-		
-	bool discountApp = false;
-	double lodgeDiscount;
+	
+	double lodgeDiscount = 0.0;
 	if (isPau && (dorm == 1 || dorm == 2))
 	{
 		lodgeDiscount = lodgeFee * 0.05;
-		discountApp = true;
 		lodgeFee = lodgeFee * 0.95;		
 	}
 	
-	bool CDiscountApp = false;
-	double courseDiscount;
-	
+	double courseDiscount = 0.0;	
 	srand(time(0));
-    int randNum = rand() %100;
+    int randNum = (rand() %100) + 1;
     
-	if (courseDays > 5 || courseFee > 12000)
+	if (courseDays > 5 || courseFee > 12000.0)
 	{
-		courseDiscount = courseFee * 0.3;
-		CDiscountApp = true;
+		courseDiscount = courseFee * 0.03;
 		courseFee = courseFee * 0.97;
 	}
 	
 	double total = courseFee + lodgeFee;
-	int promo = 0;
-	
+	double promo = 0.0;	
 	if (randNum == 7 || randNum == 77)
 	{
-		total = total - 500;
-		promo = 500;
+		promo = 500.0;
 	}
+	total = total - promo;
 	
-	cout << "Name: " << name<<"   (PAU student: "<< PAU<<")\n" ;
-	cout<< "Course: "<< courseName<< "    Days: "<< courseDays<<"\n";
-	cout<< "Registration: =N="<<courseFee;
-	if(CDiscountApp)
-	{
-		cout<<"    (Discount Applied: =N="<<courseDiscount<<")\n";
-	}
-	else{
-		cout<<"\n";
-	}
-	cout<< "Lodging: =N="<<lodgeFee;
-	if(discountApp)
-	{
-		cout<<"    (Discount applied: =N="<<lodgeDiscount<<")\n";
-	}
-	else{
-		cout<<"\n";
-	}
-	cout<<"Random draw: "<<randNum<<"   Promo applied: "<<promo<<"\n" ;
-	cout<<"Total: =N="<<total;
+	cout << "\n\nName: " << name<<"\nPAU student: "<< (isPau ? "YES" : "NO")<<"\n" ;
+	cout<< "Course: "<< courseName<< "\nDays: "<< courseDays<<"\n";
+	cout<< "Registration: =N= "<<courseFee<<"\t(Discount Applied: =N= "<<courseDiscount<<")\n";
+	cout<<"Lodging per Day: =N= "<< lodgePerDay<<"\n"<< "Lodging: =N= "<<lodgeFee<<"\t(Discount applied: =N= "<<lodgeDiscount<<")\n";
+	cout<<"Random draw: "<<randNum<<"   Promo: =N= "<<promo<<"\n" ;
+	cout<<"Total: =N= "<<total;
 	
 	return 0;
 }	
