@@ -4,6 +4,37 @@ using namespace std;
 
 int main()
 {
+	int sum_y  = 0;
+	
+	for (int i=1; i<=2; i++)
+	{
+		for (int j=1;j<=3; j++)
+		{
+			sum_y = sum_y + i + j;
+		}
+	}
+	cout<<sum_y<<"\n\n";
+	
+	for (int i=1; i<=5; i++)
+	{
+		for (int j=1;j<=5; j++)
+		{
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+	cout<<"\n";
+	
+	for (int i=1; i<=5; i++)
+	{
+		for (int j=1;j<=i; j++)
+		{
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+	cout<<"\n";
+	
 	cout<<"Multiplication Table\n"<<"=========================\n";
 	cout<<"  |";
 	for(int i =1; i<13; i++)
@@ -108,7 +139,7 @@ int main()
 	{
 		for (int j = 2; j<=3; j++)
 		{
-			sum3 = sum3 + i + j;
+			sum3 += sum3 + i + j;
 		}
 	}
 	cout<< "Sum3 is "<<sum3<<"\n\n\n";
