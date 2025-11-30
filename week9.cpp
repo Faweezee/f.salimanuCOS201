@@ -10,6 +10,40 @@ iii. search for an element in an array using : linear search and binary search a
 int minElement(int list[], int size);
 int maxElement(int list[], int size);
 
+int linearSearch(const int list[], int key, int arraySize)
+{
+	for (int i = 0; i < arraySize; i++)
+	{
+		if (key == list[i]) 
+	}
+	return -1;
+}
+
+int binarySearch(const int list[], int key, int arraySize)
+{
+	int low = 0;
+    int high = arraySize - 1;
+
+    while (low <= high)
+    {
+        int mid = low + (high - low) / 2;
+
+        if (list[mid] == key)
+        {
+            return mid;
+        }
+        else if (list[mid] < key)
+        {
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+    return -1;
+}
+
 void readArray(int list[], int size)
 {
 	for (int i = 0; i <=size-1; i++)
