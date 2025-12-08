@@ -85,12 +85,16 @@ int main()
 	arr[3] = 5;
 	arr[4] = 8;
 	*/
+	
+	
 	int sortedList[] = {1,4,5,6,7,9,11,14,15,16,19,21,67};
 	int sortedListSize = sizeof(sortedList) / sizeof(sortedList[0]);
 	cout<< linearSearch(sortedList, 67, sortedListSize)<<endl;
 	cout<< binarySearch(sortedList, 4, sortedListSize)<<endl;
 	minElement(arr, size);
 	maxElement(arr, size);
+	
+	
 	int sum = arr[0] + arr[4];
 	cout<< "Sum of arr[0] + arr[4] = "<<sum<<endl;
 	//to get the length of an array
